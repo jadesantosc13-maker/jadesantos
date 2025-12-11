@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buldak Order Form</title>
+  <style>
+    body {
+      font-family: 'ALGERIAN', sans-serif;
+      background-image: url('buldak.jpg');
+	  background-repeat: no-repeat;
+	  background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 520px;
+      background: white;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #d63b29;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 18px;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #d63b29;
+    }
+
+    button {
+      background: #d63b29;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #b12f22;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🔥 Buldak Noodles Order Form 🔥</h2>
+
+    <form id="buldakForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your full name" required>
+
+      <label for="name">Contact Number</label>
+      <input type="text" id="name" placeholder="Your contact number" required>
+	  
+	   <label for="name">Email Address</label>
+      <input type="text" id="name" placeholder="Your Email Address" required>
+	  
+      <label for="address">Delivery Address</label>
+      <input type="text" id="address" placeholder="Street, City, ZIP" required>
+
+      <label for="flavor">Select Flavor</label>
+      <select id="flavor" required>
+        <option value="">-- Choose your flavor --</option>
+        <option value="45">Original Hot Chicken (₱45/box)</option>
+        <option value="50">2x Spicy (₱50/box)</option>
+        <option value="48">Carbonara (₱48/box)</option>
+        <option value="47">Cheese (₱47/box)</option>
+		<option value="58">Kimchi (₱58/box)</option>
+		<option value="65">Habanero Lime (₱65/box)</option>
+        <option value="70">Cream Carbonara (₱70/box)</option>
+	    <option value="55">Stew (₱55/box)</option>
+		<option value="40">Curry (₱40/box)</option>
+		<option value="90">Corn (₱90/box)</option>
+		<option value="85">Tomato Pasta(₱85/box)</option>
+		<option value="75">Quattro Cheese (₱75/box)</option>
+	</select>
+
+      <label for="quantity">Quantity (boxes)</label>
+      <input type="number" id="quantity" value="1" min="1" required> 
+
+      <div class="total" id="totalPrice">Total: $0.00</div>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <div class="note">We deliver within 2–3 business days 🇰🇷</div>
+  </div>

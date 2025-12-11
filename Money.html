@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Money Converter</title>
+
+<style>
+    body {
+      font-family: 'ALGERIAN', sans-serif;
+      background-image: url('temperature.jpg');
+	  background-repeat: no-repeat;
+	  background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+        background: white;
+        padding: 25px;
+        width: 320px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    input, select {
+        width: 90%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+        font-size: 16px;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        background: #0078ff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #005fcc;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Temperature Converter</h2>
+
+    <input id="tempInput" type="number" placeholder="Enter temperature">
+
+    <select id="scale">
+        <option value="CtoF">Celsius → Fahrenheit</option>
+        <option value="FtoC">Fahrenheit → Celsius</option>
+        <option value="CtoK">Celsius → Kelvin</option>
+        <option value="KtoC">Kelvin → Celsius</option>
+    </select>
+
+    <button onclick="convertTemp()">Convert</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function convertTemp() {
+    let value = parseFloat(document.getElementById("tempInput").value);
+    let scale = document.getElementById("scale").value;
+    let result = "";
+
+    if (isNaN(value)) {
+        document.getElementById("result").innerHTML = "Please enter a number.";
+        return;
+    }
+
+    switch(scale) {
+        case "CtoF":
+            result = (value * 9/5) + 32 + " °F";
+            break;
+        case "FtoC":
+            result = (value - 32) * 5/9 + " °C";
+            break;
+        case "CtoK":
+            result = value + 273.15 + " K";
+            break;
+        case "KtoC":
+            result = value - 273.15 + " °C";
+            break;
+    }
+
+    document.getElementById("result").innerHTML = "Result: " + result;
+}
+</script>
+
+</body>
+</html>
